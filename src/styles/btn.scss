@@ -1,0 +1,29 @@
+$sunny: #ffd904;
+$sunny2: #ffcc00;
+$blue1: rgb(21, 191, 248);
+$blue2: rgb(18, 110, 244);
+$black: rgb(34, 34, 34);
+
+.Btn1 {
+    width: 90%;
+    padding: 0.8em;
+    border: none;
+    border-radius: 8px;
+    background-color: $sunny2;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+
+    .btn-text {
+        text-decoration: none;
+        color: $black;
+        font-weight: 600;
+    }
+
+    &:hover {
+        background-color: #fff;
+        transition: background 0.2s;
+    }
+}

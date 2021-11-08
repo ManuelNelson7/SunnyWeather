@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap");
+
+$sunny: #ffd904;
+$sunny2: #ffcc00;
+$blue1: rgb(21, 191, 248);
+$blue2: rgb(18, 110, 244);
+$black: rgb(34, 34, 34);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient($blue1, $blue2);
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 85%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: repeat(2, auto);
+    flex-direction: column;
+    justify-content: center;
+
+    .img-div {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        padding-top: 8em;
+
+        .logo {
+            height: 9em;
+        }
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 9em;
+
+        h1 {
+            text-align: center;
+            color: #fff;
+            font-size: 2em;
+            width: 100%;
+
+            #sunny {
+                font-size: 1.1em;
+                color: $sunny2;
+            }
+        }
+
+        p {
+            text-align: center;
+            color: #fff;
+            font-weight: 500;
+            padding-bottom: 1em;
+            width: 90%;
+        }
+    }
+}
+
+.container-weather {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+
+    h2 {
+        font-size: 1.1em;
+        color: #fff;
+        font-weight: 600;
+        line-height: 15px;
+        padding-bottom: 0.5em;
+        
+    }
+
+    form {
+        background-color: #fff;
+        width: 100%;
+        outline: none;
+        border-radius: 10px;
+        padding: 0.4em;
+
+        .citysearch {
+            outline: none;
+            border: none;
+            background: none;
+            width: 90%;
+            margin-left: 5px;
+        }
+
+        #s-submit {
+            background: none;
+            border: none;
+
+            .btn-search {
+                font-size: 1.1em;
+                color: gray
+            }
+        }
+
+
+    }
+
+}

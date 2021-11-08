@@ -1,0 +1,30 @@
+.Btn1 {
+  width: 90%;
+  padding: 0.8em;
+  border: none;
+  border-radius: 8px;
+  background-color: #ffcc00;
+  cursor: pointer;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-decoration: none;
+}
+
+.Btn1 .btn-text {
+  text-decoration: none;
+  color: #222222;
+  font-weight: 600;
+}
+
+.Btn1:hover {
+  background-color: #fff;
+  -webkit-transition: background 0.2s;
+  transition: background 0.2s;
+}
+/*# sourceMappingURL=btn.css.map */

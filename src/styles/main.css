@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#15bff8), to(#126ef4));
+  background: linear-gradient(#15bff8, #126ef4);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container {
+  width: 85%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+  -ms-grid-rows: (auto)[2];
+      grid-template-rows: repeat(2, auto);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .img-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  padding-top: 8em;
+}
+
+.container .img-div .logo {
+  height: 9em;
+}
+
+.container .text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 9em;
+}
+
+.container .text h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2em;
+  width: 100%;
+}
+
+.container .text h1 #sunny {
+  font-size: 1.1em;
+  color: #ffcc00;
+}
+
+.container .text p {
+  text-align: center;
+  color: #fff;
+  font-weight: 500;
+  padding-bottom: 1em;
+  width: 90%;
+}
+
+.container-weather {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 2em;
+}
+
+.container-weather h2 {
+  font-size: 1.1em;
+  color: #fff;
+  font-weight: 600;
+  line-height: 15px;
+  padding-bottom: 0.5em;
+}
+
+.container-weather form {
+  background-color: #fff;
+  width: 100%;
+  outline: none;
+  border-radius: 10px;
+  padding: 0.4em;
+}
+
+.container-weather form .citysearch {
+  outline: none;
+  border: none;
+  background: none;
+  width: 90%;
+  margin-left: 5px;
+}
+
+.container-weather form #s-submit {
+  background: none;
+  border: none;
+}
+
+.container-weather form #s-submit .btn-search {
+  font-size: 1.1em;
+  color: gray;
+}
+/*# sourceMappingURL=main.css.map */
