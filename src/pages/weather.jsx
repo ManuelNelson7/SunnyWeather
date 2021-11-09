@@ -20,7 +20,6 @@ export const WeatherIcons = {
     "11d": "/icons/storm.svg",
     "11n": "/icons/storm.svg",
 };
-
 const Weather = () => {
     const API_key = 'a3f6e62ae7aa7e4377baff45fcf6ca8f'
     const [latitude, setLatitude] = useState(0)
@@ -68,17 +67,27 @@ const Weather = () => {
         fetchName();
     }, [latitude, longitude])
 
-
+    
     return (
-        <div>
-            <div className="container-weather">
-                <div className="location-name">
-                    <i className="fas fa-map-marker-alt"></i>
-                    <h4>{cityName}</h4>
+        <div className='body'>
+            <div className="weather">
+                <div className="container-weather">
+                    <div className="location-name">
+                        <i className="fas fa-map-marker-alt"></i>
+                        <h4>{cityName}</h4>
+                    </div>
+                    <div className='div-img'>
+                        <img src={WeatherIcons[icon]} alt={weather} />
+                    </div>
+                    <h1 className='temp'>{Math.floor(temperature)}<span>°</span></h1>
+                    <h3>{weather}</h3>
+                    <h5>Muy nuboso</h5>
+                    <h5>Muy nuboso</h5>
                 </div>
-                <img src={WeatherIcons[icon]} alt="" />
-                <h1>{`${Math.floor(temperature)}°`}</h1>
-                <h3>{weather}</h3>
+            </div>
+
+            <div className="container-forecast">
+                <p>Today</p>
             </div>
         </div>
     )

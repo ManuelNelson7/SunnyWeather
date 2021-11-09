@@ -5,6 +5,8 @@ $sunny2: #ffcc00;
 $blue1: rgb(21, 191, 248);
 $blue2: rgb(18, 110, 244);
 $black: rgb(34, 34, 34);
+$dark1: rgb(4, 33, 71);
+$dark2: rgb(0,10,24);
 
 * {
     margin: 0;
@@ -13,7 +15,7 @@ $black: rgb(34, 34, 34);
     font-family: "Poppins", sans-serif;
 }
 
-body {
+.body1 {
     min-height: 100vh;
     background: linear-gradient($blue1, $blue2);
     display: flex;
@@ -68,46 +70,88 @@ body {
     }
 }
 
-.container-weather {
+.body {
     display: flex;
     flex-direction: column;
-    padding-top: 2em;
+    align-items: center;
+    background: linear-gradient($dark1, $dark2);
 
-    h2 {
-        font-size: 1.1em;
-        color: #fff;
-        font-weight: 600;
-        line-height: 15px;
-        padding-bottom: 0.5em;
-        
-    }
-
-    form {
-        background-color: #fff;
+    .weather{
+        background: linear-gradient($blue1, $blue2);
         width: 100%;
-        outline: none;
-        border-radius: 10px;
-        padding: 0.4em;
+        display: flex;
+        justify-content: center;
+        border-radius: 0 0 50px 50px;
 
-        .citysearch {
-            outline: none;
-            border: none;
-            background: none;
-            width: 90%;
-            margin-left: 5px;
-        }
+        .container-weather {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80vw;
+            padding-top: 1em;
+            color: #fff;
+            
+            
+    
+            .location-name {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+    
+                .fas {
+                    font-size: 1.1em;
+                }
+    
+                h4 {
+                    font-size: 1.4em;
+                    font-weight: 600;
+                    margin-left: 5px;
+                }
+            }
+    
+            .div-img {
+                padding-top: 2em;
+                img {
+                    height: 10em;
+                }
+            }
+    
+            .temp {
+                position: relative;
+                font-size: 7em;
+                margin-top: 0;
+                line-height: 1em;
+                font-weight: 600;
+                margin-right: 5px;
+    
+                span {
+                    position: absolute;
+                    font-size: 0.3em;
+                    font-weight: 500;
+                    opacity: 0.5;
+                    translate: 0 -25%;
+                }
+            }
+    
+            h3 {
+                font-size: 1.5em;
+                font-weight: 500;
+                margin-top: -0.5em;
+            }
 
-        #s-submit {
-            background: none;
-            border: none;
-
-            .btn-search {
-                font-size: 1.1em;
-                color: gray
+            h5 {
+                opacity: 0;
             }
         }
 
-
     }
 
+
+    .container-forecast {
+        width: 100%;
+        min-height: 32vh;
+    }
+    
 }
+
+
