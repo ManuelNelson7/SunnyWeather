@@ -34,7 +34,7 @@ const Weather = () => {
 
     return (
         <div>
-            
+
             {cityName && weather ? (
                 <WeatherComponent weather={weather} city={cityName} />
             ) : (

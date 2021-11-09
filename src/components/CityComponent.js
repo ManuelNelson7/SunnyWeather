@@ -8,12 +8,12 @@ const CityComponent = (props) => {
     <body>
       <div className="container-weather">
 
-        <h2 className='City-label'>Find Weather of your city</h2>
+        <h2 className='City-label'>Obtén el clima de tu ciudad</h2>
 
         <form id='searchbox' onSubmit={fetchWeather}>
           <input className='citysearch'
             onChange={(e) => updateCity(e.target.value)}
-            placeholder="City"
+            placeholder="Ciudad"
           />
           <button id='s-submit' type={"submit"}><i class="btn-search fas fa-search"></i></button>
         </form>
