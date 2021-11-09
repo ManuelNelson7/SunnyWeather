@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Axios from "axios";
 import CityComponent from "../components/CityComponent";
 import WeatherComponent from "../components/WeatherInfoComponent";
+import axios from "axios";
 
 export const WeatherIcons = {
     "01d": "/icons/sunny.svg",
@@ -21,26 +22,65 @@ export const WeatherIcons = {
 };
 
 const Weather = () => {
-    const [cityName, updateCity] = useState();
-    const [weather, updateWeather] = useState();
-    const fetchWeather = async (e) => {
-        e.preventDefault();
-        const response = await Axios.get(
-            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=0a0b60891c9b19e7b29433fbe7ac5008&lang=sp `
-        );
-        updateWeather(response.data);
+    const API_key = 'a3f6e62ae7aa7e4377baff45fcf6ca8f'
+    const [latitude, setLatitude] = useState(0)
+    const [longitude, setLongitude] = useState(0)
+    const [weather, setWeather] = useState('')
+    const [temperature, setTemperature] = useState(0)
+    const [cityName, setCityName] = useState('')
+    const [icon, setIcon] = useState('')
+
+
+    const savePositionToState = (position) => {
+        setLatitude(position.coords.latitude);
+        setLongitude(position.coords.longitude);
     }
+
+    const fetchWeather = async () => {
+        try {
+            window.navigator.geolocation.getCurrentPosition(savePositionToState);
+            const res = await axios.get(
+                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${API_key}&lang=es&units=metric`
+            );
+            setTemperature(res.data.current.temp)
+            setWeather(res.data.current.weather[0].description)
+            setIcon(res.data.current.weather[0].icon)
+            console.log(res.data);
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    const fetchName = async () => {
+        try {
+            const res2 = await axios.get(
+                `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${API_key}&lang=es&units=metric`
+            );
+            setCityName(res2.data.name)
+            console.log(res2.data);
+        } catch (err) {
+            console.error(err)
+        }
+    }
+
+    useEffect(() => {
+        fetchWeather();
+        fetchName();
+    }, [latitude, longitude])
 
 
     return (
         <div>
-
-            {cityName && weather ? (
-                <WeatherComponent weather={weather} city={cityName} />
-            ) : (
-                <CityComponent updateCity={updateCity} fetchWeather={fetchWeather} />
-            )}
-        </div >
+            <div className="container-weather">
+                <div className="location-name">
+                    <i className="fas fa-map-marker-alt"></i>
+                    <h4>{cityName}</h4>
+                </div>
+                <img src={WeatherIcons[icon]} alt="" />
+                <h1>{`${Math.floor(temperature)}°`}</h1>
+                <h3>{weather}</h3>
+            </div>
+        </div>
     )
 }
 
